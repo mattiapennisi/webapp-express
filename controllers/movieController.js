@@ -1,3 +1,5 @@
+const connection = require('../data/db.js')
+
 function index(req, res) {
     
 }
