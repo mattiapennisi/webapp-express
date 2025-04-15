@@ -1,0 +1,74 @@
+/* Debug */
+
+.debug {
+    * {
+        border: 1px dotted black;
+        min-height: 50px;
+    }
+
+    .col {
+        flex-basis: auto;
+        flex-grow: 1;
+        background-color: palevioletred;
+    }
+    
+    .col1 {
+        flex-basis: calc(100%/12*1);
+        background-color: blueviolet;
+    }
+    
+    .col2 {
+        flex-basis: calc(100%/12*2);
+        background-color: brown;
+    }
+    
+    .col3 {
+        flex-basis: calc(100%/12*3);
+        background-color: cornflowerblue;
+    }
+    
+    .col4 {
+        flex-basis: calc(100%/12*4);
+        background-color: aquamarine;
+    }
+    
+    .col5 {
+        flex-basis: calc(100%/12*5);
+        background-color: chocolate;
+    }
+    
+    .col6 {
+        flex-basis: 50%;
+        background-color: darkgoldenrod;
+    }
+    
+    .col7 {
+        flex-basis: calc(100%/12*7);
+        background-color: palegreen;
+    }
+    
+    .col8 {
+        flex-basis: calc(100%/12*8);
+        background-color: paleturquoise;
+    }
+    
+    .col9 {
+        flex-basis: calc(100%/12*9);
+        background-color: darkorchid;
+    }
+    
+    .col10 {
+        flex-basis: calc(100%/12 *10);
+        background-color: darkcyan;
+    }
+    
+    .col11 {
+        flex-basis: calc(100%/12*11);
+        background-color: deepskyblue;
+    }
+    
+    .col12 {
+        flex-basis: 100%;
+        background-color: bisque;
+    }
+}
