@@ -1,6 +1,6 @@
 const connection = require('../data/db.js')
 
-function index(req, res) {
+function getMovies(req, res) {
     const sql = `
         SELECT * 
         FROM movies
@@ -12,7 +12,7 @@ function index(req, res) {
     })
 }
 
-function show(req, res) {
+function showMovie(req, res) {
     const id = req.params.id
     const movieSql = `
         SELECT *
@@ -40,27 +40,45 @@ function show(req, res) {
     })
 }
 
-function store(req, res) {
+function storeMovie(req, res) {
+}
+
+function updateMovie(req, res) {
 
 }
 
-function update(req, res) {
+function modifyMovie(req, res) {
 
 }
 
-function modify(req, res) {
+function destroyMovie(req, res) {
 
 }
 
-function destroy(req, res) {
+function storeReview(req, res) {
+    const id = Number(req.params.id)
+    const { movie_id, name, vote, text } = req.body
 
+    const sql = `
+    INSERT INTO reviews (movie_id, name, vote, text)
+    VALUES (?, ?, ?, ?)
+    `
+    const values = [movie_id, name, vote, text]
+
+    connection.query(sql, values, (err, results) => {
+        if (err) return res.status(500).json({ error: err.message })
+
+        console.log(results)
+        res.status(201).json({ message: 'Review added successfully', reviewId: results.insertId })
+    })
 }
 
 module.exports = {
-    index,
-    show,
-    store,
-    update,
-    modify,
-    destroy
+    getMovies,
+    showMovie,
+    storeMovie,
+    updateMovie,
+    modifyMovie,
+    destroyMovie,
+    storeReview
 }
