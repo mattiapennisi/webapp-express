@@ -57,13 +57,13 @@ function destroyMovie(req, res) {
 
 function storeReview(req, res) {
     const id = Number(req.params.id)
-    const { movie_id, name, vote, text } = req.body
+    const { name, vote, text } = req.body
 
     const sql = `
     INSERT INTO reviews (movie_id, name, vote, text)
     VALUES (?, ?, ?, ?)
     `
-    const values = [movie_id, name, vote, text]
+    const values = [id, name, vote, text]
 
     connection.query(sql, values, (err, results) => {
         if (err) return res.status(500).json({ error: err.message })

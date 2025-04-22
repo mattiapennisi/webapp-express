@@ -18,7 +18,7 @@ router.patch('/:id', movieController.modifyMovie)
 
 router.delete('/:id', movieController.destroyMovie)
 
-router.post('/reviews/', movieController.storeReview)
+router.post('/:id/reviews/', movieController.storeReview)
 
 // Export
 module.exports = router
